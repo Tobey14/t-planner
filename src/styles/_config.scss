@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.cdnfonts.com/css/work-sans');
+@import url('https://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chathura&family=Ephesis&family=Irish+Grover&display=swap');
+
+$login-font: 'Avenir Next LT Pro', sans-serif;
+$logo-font: 'Irish Grover', cursive;
+$auth-font: 'Ephesis', cursive;
+$card-font: 'Chathura', sans-serif;
+$logo-color: #FFFEFD;
+$light-color: #FFFFFF;
+$primary-color: #35574B;
+$secondary-color: #88A48B;
+$background-color: #E5E5E5;
+$border-color: #E5E5E5;
+$sidebar-font: 'Work Sans', sans-serif;
+$third-color: #545F7D;
+$nav_bg: #291C1C;
+
+body {
+    font-style: normal;
+    font-weight: 400;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+::placeholder {
+    color: #8B8282 !important;
+    opacity: 1 !important;
+    font-family: $auth-font;
+    font-size: 22px;
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.flexed {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    height: fit-content;
+    width: 100%;
+    background-color: $light-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .bars {
+        margin: 0.4rem 0;
+        cursor: pointer;
+        color: $secondary-color;
+
+    }
+}
+
+.flexed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.view-all {
+    float: right;
+    font-size: 28px;
+    color: #395516;
+    margin: 0;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 25px;
+    line-height: 40px;
+    color: #232920;
+    margin: 10px 0 0 0;
+}
+
+.course-card {
+    width: 18%;
+    height: 220px;
+    background: #FFFFFF;
+    border-top: 1px solid #000000;
+    box-shadow: 0px 30px 14px rgba(189, 197, 179, 0.25);
+    border-radius: 30px;
+    font-family: $card-font;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    position: relative;
+
+
+    .card-body {
+        line-height: 0.5;
+
+        .card-title {
+            font-weight: 700;
+            font-size: 50px;
+            margin: 0;
+            color: $secondary-color;
+            text-transform: capitalize !important;
+        }
+
+        .card-desc {
+            font-size: 40px;
+            color: $third-color;
+            // text-align: center;
+            margin: 0;
+        }
+
+        .badge {
+            width: fit-content;
+            padding: 0.3rem 1rem;
+            background: $secondary-color;
+            ;
+            border-radius: 20px;
+            margin-top: 10px;
+
+            p {
+                color: $light-color;
+                font-size: 40px;
+                margin: 0;
+            }
+        }
+
+        .view {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            color: $secondary-color;
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+
+
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.eval-card {
+    width: 100%;
+    background: #FFFFFF;
+    border-width: 0.5px 0.5px 0px 0px;
+    border-style: solid;
+    border-color: #000000;
+    box-shadow: 0px 30px 14px rgba(189, 197, 179, 0.25);
+    border-radius: 30px;
+    font-family: $card-font;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    position: relative;
+    line-height: 0.5;
+
+    .card-title {
+        font-weight: 700;
+        font-size: 50px;
+        margin: 0;
+        color: $secondary-color;
+        ;
+        text-transform: capitalize !important;
+    }
+
+    .badge {
+        width: fit-content;
+        padding: 0.3rem 1rem;
+        background: $secondary-color;
+        ;
+        border-radius: 20px;
+        margin-top: 10px;
+
+        p {
+            color: $light-color;
+            font-size: 40px;
+            margin: 0;
+        }
+    }
+
+    .view {
+        cursor: pointer;
+        color: $secondary-color;
+        ;
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+
+
+}
+
+.notification {
+    width: 100%;
+    background: #FFFFFF;
+    border-width: 0.5px 0.5px 0px 0px;
+    border-style: solid;
+    border-color: #000000;
+    box-shadow: 0px 3px 1px rgba(189, 197, 179, 0.25);
+    border-radius: 3px;
+    font-family: $card-font;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    position: relative;
+    line-height: 0.5;
+
+    .card-title {
+        font-weight: 600;
+        font-size: 30px;
+        margin: 0;
+        color: $secondary-color;
+    }
+
+    .view {
+        cursor: pointer;
+        color: $secondary-color;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+
+
+}
+
+.pagination {
+    padding: 0.7rem 0.5rem
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-btn-div {
+    display: flex;
+    align-items: center;
+    flex-basis: row;
+}
+
+.pagination_count {
+    color: #9A9A9A;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.pagination-btn-div>button {
+    border: 1px solid $secondary-color;
+    border-radius: 1px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #B0B0B0;
+    padding: 0.2rem 0.5rem;
+}
+
+.pagination-btn-div>button.active {
+    background-color: $secondary-color;
+    color: #FFFEFE;
+}
+
+@media screen and (max-width:720px) {
+
+    .pagination_count {
+        font-size: 12px;
+        margin-right: 1rem;
+    }
+
+
+    .pagination-btn-div>button {
+        font-size: 12px;
+    }
+}
+
+.eval-question {
+    width: 100%;
+    margin: 1rem 0;
+    color: #184A1A;
+    display: flex;
+
+    .questions {
+        margin-left: 2rem;
+
+        .options {
+            margin-left: 0.5rem;
+
+            .option {
+                display: flex;
+                align-items: center;
+                margin: 1rem 0;
+
+                span {
+                    width: 30%;
+                }
+
+                input[type='checkbox'] {
+                    margin-left: 300px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+.form-group {
+    width: 50%;
+    margin: 1rem 0;
+
+    label {
+        font-size: 15px;
+        color: #3A3838;
+        margin: 0;
+    }
+
+    input,
+    select {
+        width: 100%;
+        height: 50px;
+        background: #F5F2F2;
+        border-radius: 10px;
+        border: none;
+        padding: 0.2rem 1rem;
+    }
+
+}
+
+select {
+    width: 54%;
+    height: 50px;
+    background: #F5F2F2;
+    border-radius: 10px;
+    border: none;
+    padding: 0.2rem 1rem;
+}
+
+// #root{
+//     overflow-x: hidden;
+// }
+
+// .bi-filter{
+
+//     font-size: 16px;
+//     color:$primary-color;
+// }
+
+
+// @function set-text-color ($color) {
+//     @if(lightness($color) > 70 ) {
+//         @return #333;
+//     } @else {
+//         @return #FFF;
+//     }
+// }
+
+// //set background and text color using mixin
+// @mixin set-background($color){
+//     background-color: $color;
+//     color:set-text-color($color);
+// }
+
+//margin and padding classes using a loop
+
+// $spaceamounts: (2,5,8,10,12);
+
+// @each $space in $spaceamounts {
+//     .mr-#{$space} {
+//         margin-right: #{$space}px;
+//     }
+
+//     .ml-#{$space} {
+//         margin-left: #{$space}px;
+//     }
+
+//     .p-#{$space} {
+//         margin: #{$space}rem;
+//     }
+
+//     .py-#{$space} {
+//         margin: #{$space}rem 0;
+//     }
+// }
