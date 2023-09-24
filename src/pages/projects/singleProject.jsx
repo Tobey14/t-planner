@@ -26,7 +26,7 @@ const Courses = () => {
         <div className="dashboard-content">
 
             <div className="courses">
-                <p className="title">Project : <b>{`${project.name} - ${project.period} days`}</b></p>
+                <p className="title">Project : <b>{`${project.name} - ${project.period.amount + project.period.desc}`}</b></p>
                 <p className="desc">{project.desc}</p>
             </div>
             <div className="evaluations">

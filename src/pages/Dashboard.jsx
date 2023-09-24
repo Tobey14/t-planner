@@ -47,6 +47,10 @@ const Dashboard = () => {
 
                 <div className="courses-cards">
                     {
+                        !user.projects &&
+                        <p className='centred'>No Projects Yet</p>
+                    }
+                    {
                         user.projects?.map((project, index) => {
                             return <Card key={index} project={project} />
                         })
@@ -64,6 +68,10 @@ const Dashboard = () => {
                 <p className="title">Upcoming Tasks</p>
 
                 <div className="courses-cards">
+                    {
+                        !tasks &&
+                        <p className='centred'>No Tasks Yet</p>
+                    }
                     {
                         tasks?.map((task, key) => {
                             return <EvalCard task={task} key={key} />

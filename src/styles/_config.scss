@@ -26,6 +26,20 @@ body {
     padding: 0;
 }
 
+// mobile screen
+@mixin mobile {
+    @media screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+// tablet screen
+@mixin tablet {
+    @media screen and (max-width: 900px) {
+        @content;
+    }
+}
+
 ::placeholder {
     color: #8B8282 !important;
     opacity: 1 !important;
@@ -53,9 +67,15 @@ body {
     padding: 0 1rem;
 
     .bars {
-        margin: 0.4rem 0;
-        cursor: pointer;
-        color: $secondary-color;
+        display: none;
+
+        @include tablet {
+            margin: 0.4rem 0;
+            cursor: pointer;
+            color: $secondary-color;
+            display: block;
+        }
+
 
     }
 }
@@ -96,6 +116,14 @@ body {
     margin: 1.5rem 0;
     position: relative;
 
+    @include tablet{
+        width: 25%;
+    }
+
+    @include mobile{
+        width: 40%;
+    }
+
 
     .card-body {
         line-height: 0.5;
@@ -106,6 +134,10 @@ body {
             margin: 0;
             color: $secondary-color;
             text-transform: capitalize !important;
+
+            @include mobile{
+                font-size: 40px;
+            }
         }
 
         .card-desc {
@@ -113,6 +145,9 @@ body {
             color: $third-color;
             // text-align: center;
             margin: 0;
+            @include mobile{
+                font-size: 30px;
+            }
         }
 
         .badge {
@@ -127,6 +162,10 @@ body {
                 color: $light-color;
                 font-size: 40px;
                 margin: 0;
+
+                @include mobile{
+                    font-size: 30px;
+                }
             }
         }
 
@@ -171,32 +210,44 @@ body {
         font-size: 50px;
         margin: 0;
         color: $secondary-color;
-        ;
         text-transform: capitalize !important;
+        @include mobile {
+            font-size: 40px;
+        }
     }
 
     .badge {
         width: fit-content;
         padding: 0.3rem 1rem;
         background: $secondary-color;
-        ;
         border-radius: 20px;
         margin-top: 10px;
+
+        @include mobile {
+            margin-left: 5px;
+        }
 
         p {
             color: $light-color;
             font-size: 40px;
             margin: 0;
+            @include mobile {
+                font-size: 20px;
+            }
         }
     }
 
     .view {
         cursor: pointer;
         color: $secondary-color;
-        ;
         font-size: 30px;
         font-weight: 700;
         margin: 0;
+
+        @include mobile {
+            font-size: 20px;
+            margin-left: 10px;
+        }
     }
 
 
@@ -328,6 +379,10 @@ body {
     width: 50%;
     margin: 1rem 0;
 
+    @include mobile {
+        width: 93%;
+    }
+
     label {
         font-size: 15px;
         color: #3A3838;
@@ -353,6 +408,10 @@ select {
     border-radius: 10px;
     border: none;
     padding: 0.2rem 1rem;
+
+    @include mobile {
+        width: 100%;
+    }
 }
 
 // #root{

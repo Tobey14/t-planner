@@ -15,8 +15,8 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            {!showSidebar && <div className="bars" onClick={handleOpenSidebar}><FaBars color='#88A48B'/></div>}
-            <div className="bars" onClick={handleOpenSidebar}><FaBell color='#88A48B'/></div>
+            <div className="bars" onClick={handleOpenSidebar}><FaBars color='#88A48B'/></div>
+            {/* <div className="bars" onClick={handleOpenSidebar}><FaBell color='#88A48B'/></div> */}
         </div>
     )
 }

@@ -34,7 +34,7 @@ const Card = ({project, image, title, desc}) => {
                 </p>
 
                 {!image && (<div className="badge">
-                    <p className="text">{project?.period} days</p>
+                    <p className="text">{project?.period.amount + project?.period.desc}</p>
                 </div>)}
 
                 {!image && <div className="badge">

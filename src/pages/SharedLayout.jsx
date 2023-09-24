@@ -22,7 +22,7 @@ const SharedLayout = () => {
             
             <main className='user-container' onClick={handleCloseModal}>
 
-                {showSidebar ? <Sidebar />: null}
+                <Sidebar />
 
                 <div className="dashboard-page" >
                     {<Navbar /> }
