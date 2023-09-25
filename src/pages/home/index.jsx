@@ -54,7 +54,7 @@ const Home = () => {
                     About
                 </p>
 
-                <p className="welcome_text">
+                <div className="welcome_text">
                     This project is inspired by the need to develop a real life application that can be useful to procrastinators like me and others.
                     The plan is to build a master task planner with additional features like the progress score. 
                     <br />  This is a Portfolio Project for Holberton School with a link. 
@@ -77,7 +77,7 @@ const Home = () => {
                             </li>
                         </ul> 
                     
-                </p>
+                </div>
 
                 
 

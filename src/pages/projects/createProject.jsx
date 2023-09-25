@@ -3,8 +3,6 @@ import userImg from '../../assets/images/user.png';
 import Input from '../../components/home/Input';
 import Button from '../../components/home/Button';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../store/features/auth/userSlice';
 import { getLoggedUserFromLocalStorage, addProjectToLocalStorage } from '../../utils/LocalStorage';
 import { dateDiffInDays } from '../../utils/dateFormatter';
 import { toast } from 'react-toastify';
@@ -19,7 +17,6 @@ const Profile = () => {
         endDate:'',
         period:null,
     });
-    const dispatch = useDispatch();
 
     const handleForm = (evt) => {
         // console.log('yrs', evt)

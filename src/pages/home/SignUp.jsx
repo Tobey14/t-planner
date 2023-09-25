@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '../../components/auth';
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { signUpUser } from '../../store/features/auth/userSlice';
+import { signUpUser } from '../../utils/userSlice';
 import { toast } from 'react-toastify';
 
 
@@ -14,8 +13,7 @@ const SignUp = () => {
     const [newPassword, setNewPassword] = useState('');
     const navigate = useNavigate();
 
-    const { isLoading, signupstatus } = useSelector((store) => store.user);
-    const dispatch = useDispatch();
+    const [signUpStatus, setSignUpStatus ] = useState('pending');
 
     const handleEmailChange = (e) =>{
         setEmail(e.target.value);
@@ -57,15 +55,18 @@ const SignUp = () => {
             school:'',
         }
 
-        dispatch(signUpUser(data));
+        const res = signUpUser(data);
+        if(res){
+            setSignUpStatus('fulfilled');
+        }
     }
 
     useEffect(() => {
-        if (signupstatus === 'fulfilled') {
+        if (signUpStatus === 'fulfilled') {
             navigate('/login');
         }
     
-    }, [signupstatus, navigate]);
+    }, [signUpStatus, navigate]);
 
     let fields = [{name:'Email', action:handleEmailChange, value:email}, {name:'Password', action:handlePasswordChange, value:password}, {name:'Confirm Password', action:handleNewPasswordChange, value:newPassword}];
 

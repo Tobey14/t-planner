@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { FaBars, FaBell } from 'react-icons/fa';
-import { openSidebar } from '../../store/features/sidebarSlice';
-import { useDispatch, useSelector } from 'react-redux';
 
 
 const Navbar = () => {
-    const dispatch = useDispatch();
-    const { showSidebar } = useSelector((store) => store.sidebar);
 
 
     const handleOpenSidebar = () => {
-        dispatch(openSidebar());
+        document.querySelector('aside').style.width = '100%';
+        document.querySelector('aside').style.visibility = 'visible';
     }
 
     return (

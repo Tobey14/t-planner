@@ -3,10 +3,9 @@ import user from '../../assets/images/user.png';
 import Input from '../../components/home/Input';
 import Button from '../../components/home/Button';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedUserFromLocalStorage } from '../../utils/LocalStorage';
 import { toast } from 'react-toastify';
-import { updateUser } from '../../store/features/auth/userSlice';
+import { updateUser } from '../../utils/userSlice';
 
 
 
@@ -20,7 +19,6 @@ const ChangePassword = () => {
         confirmPasswordNew:'',
     });
 
-    const dispatch = useDispatch();
 
     const handleForm = (evt) => {
         // console.log('yrs', evt)
@@ -45,7 +43,7 @@ const ChangePassword = () => {
         }
 
         user.password = form.passwordNew;
-        dispatch(updateUser(user));
+        updateUser(user);
         setTimeout(()=>{
             setForm({
                 password:'',

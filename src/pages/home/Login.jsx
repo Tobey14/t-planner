@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '../../components/auth';
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import * as storage from '../../utils/LocalStorage';
-import { loginUser } from '../../store/features/auth/userSlice';
-
-
+import { loginUser } from '../../utils/userSlice';
 
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const dispatch = useDispatch();
+    const [ loginstatus, setLoginStatus ] = useState('pending');
     const navigate = useNavigate();
 
-    const { isLoading, loginstatus } = useSelector((store) => store.user);
 
 
     const handleEmailChange = (e) =>{
@@ -35,8 +30,11 @@ const Login = () => {
     }, [loginstatus, navigate]);
 
     
-    const handleLogin = ()=>{
-        dispatch(loginUser({ email, password }))
+    const handleLogin = async ()=>{
+        const res = await loginUser({ email, password });
+        if(res){
+            setLoginStatus('fulfilled');
+        }
     }
 
     return (

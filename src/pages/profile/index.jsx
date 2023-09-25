@@ -3,8 +3,8 @@ import userImg from '../../assets/images/user.png';
 import Input from '../../components/home/Input';
 import Button from '../../components/home/Button';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../store/features/auth/userSlice';
+// import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../../utils/userSlice';
 import { getLoggedUserFromLocalStorage } from '../../utils/LocalStorage';
 
 
@@ -14,7 +14,7 @@ import { getLoggedUserFromLocalStorage } from '../../utils/LocalStorage';
 const Profile = () => {
     const [user, setUser] = useState(getLoggedUserFromLocalStorage());
     const [form, setForm] = useState(user);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const handleForm = (evt) => {
         // console.log('yrs', evt)
@@ -34,7 +34,7 @@ const Profile = () => {
 
     const handleSubmit = () => {
         // console.log({form})
-        dispatch(updateUser(form));
+        updateUser(form);
         setTimeout(()=>{
             setUser(getLoggedUserFromLocalStorage());
         }, 2000)

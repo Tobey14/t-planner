@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import userImg from '../../assets/images/user.png';
 import Input from '../../components/home/Input';
 import Button from '../../components/home/Button';
-import { updateUser } from '../../store/features/auth/userSlice';
+import { updateUser } from '../../utils/userSlice';
 import { getLoggedUserFromLocalStorage, addTaskToLocalStorage } from '../../utils/LocalStorage';
 import { dateDiffInDays } from '../../utils/dateFormatter';
 import { toast } from 'react-toastify';

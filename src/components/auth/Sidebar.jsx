@@ -1,18 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeSidebar } from '../../store/features/sidebarSlice';
-import { logoutUser } from '../../store/features/auth/userSlice';
+import { logoutUser } from '../../utils/userSlice';
 import { closeModal } from '../../store/features/modalSlice';
-import { FaTimes, FaUser, FaHome, FaWrench, FaBook } from 'react-icons/fa';
-import { BiBook, BiBookAlt, BiBookOpen, BiHomeAlt, BiLogOut, BiUser, BiUserCheck, BiBell } from "react-icons/bi";
+import { FaTimes } from 'react-icons/fa';
+import { BiBook, BiBookOpen, BiHomeAlt, BiLogOut, BiUser, BiBell } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 
 
 const SharedLayout = () => {
-    const dispatch = useDispatch();
-
     const handleCloseSidebar = () => {
-        dispatch(closeSidebar());
+        document.querySelector('aside').style.visibility = 'hidden';
+        document.querySelector('aside').style.width = '0%';
     }
 
     return (
@@ -39,9 +36,6 @@ const SharedLayout = () => {
                         </li>
 
                     </NavLink>
-
-
-
 
                     <NavLink to="/notifications" className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : ""
@@ -76,7 +70,7 @@ const SharedLayout = () => {
                     <NavLink to="/" className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : ""
                     }>
-                        <li style={{marginTop:'100px'}} onClick={() => dispatch(logoutUser())}>
+                        <li style={{marginTop:'100px'}} onClick={() => logoutUser()}>
                             <BiLogOut />
                             Logout
                         </li>
