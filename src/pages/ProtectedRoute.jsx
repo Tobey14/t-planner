@@ -28,8 +28,15 @@ const ProtectedRoute = ({ children }) => {
         return;
     } 
 
+    
+
     useEffect(()=>{
         if(user){
+            if (!("Notification" in window)) {
+                console.log("This browser does not support desktop notification");
+            } else {
+                Notification.requestPermission();
+            }
             checkTasks();
             setInterval(()=>{
                 checkTasks();

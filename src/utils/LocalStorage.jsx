@@ -231,8 +231,18 @@ export const createNewNotification = (task, timeLeft) => {
 
     notifications.push(notification);
     localStorage.setItem('tp_notifications', JSON.stringify(notifications));
+    showNotification(notification);
     return notification;
 };
+
+function showNotification(noti) {
+    var options = {
+        body: `${noti.message}`,
+        icon: "https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        dir: "ltr"
+    };
+    var notification = new Notification("Notification Demo", options);
+}
 
 export const getNotificationsFromLocalStorage = (id) => {
     const notifications = JSON.parse(localStorage.getItem('tp_notifications'));

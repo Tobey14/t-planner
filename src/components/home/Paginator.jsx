@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
 const Pagination = ({ data, pageSize, action, actionPayload }) => {
 
-    const dispatch = useDispatch();
     const [paginator, setPaginator] = useState({pageIndex: 1, pageSize: pageSize});
     const pageNumbers = [...Array(Math.ceil(data.length/paginator.pageSize)).keys()].map(x => ++x);
 
@@ -23,7 +21,7 @@ const Pagination = ({ data, pageSize, action, actionPayload }) => {
                             <button key={page} className={paginator.pageIndex == page ? 'active' : ''}
                                 onClick={() => {
                                     actionPayload.pageIndex = page;
-                                    dispatch(action(actionPayload));
+                                    action(actionPayload);
                                     setPaginator({ pageIndex: page, pageSize: paginator.pageSize })
                                 }}
                             >
