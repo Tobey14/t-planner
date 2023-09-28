@@ -5,7 +5,7 @@ import { getUserTasksFromLocalStorage, getLoggedUserFromLocalStorage } from '../
 
 const Tasks = () => {
     const user = getLoggedUserFromLocalStorage();
-    const tasks = getUserTasksFromLocalStorage(user?.id);
+    const tasks = getUserTasksFromLocalStorage(user?.id) || [];
 
     // console.log({tasks});
 
@@ -25,7 +25,7 @@ const Tasks = () => {
                 </div>
             </div>
 
-            <Pagination data={[1,2,3,4,5,6,7,8,9,10,11,12,13,14]} pageSize={4} action={'flex'} actionPayload={2}/>
+            <Pagination data={tasks} pageSize={4} action={'flex'} actionPayload={2}/>
 
         </div>
     )

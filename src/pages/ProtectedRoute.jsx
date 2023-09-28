@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
             let timeLeft = getTimeDifference(tasks[i].endDate);
             // console.log({timeLeft});
 
-            if(timeLeft % 10 === 0 && timeLeft <= 30 && timeLeft > 4){
+            if(timeLeft % 10 == 0 && timeLeft <= 30 && timeLeft > 4){
                 createNewNotification(tasks[i], timeLeft);
                 toast.success('You have a new notification');
             }

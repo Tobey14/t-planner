@@ -20,7 +20,7 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
-    let fields = [{name:'Email', action:handleEmailChange, value:email}, {name:'Password', action:handlePasswordChange, value:password}];
+    let fields = [{name:'Email', action:handleEmailChange, value:email, type:'email'}, {name:'Password', action:handlePasswordChange, value:password, type:'password'}];
 
     useEffect(() => {
         if (loginstatus === 'fulfilled') {

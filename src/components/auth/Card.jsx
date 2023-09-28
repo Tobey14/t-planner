@@ -14,8 +14,8 @@ const Card = ({ welcomeText, inputFields, action}) => {
             <div className="inputs">
                 {
                     inputFields.map((field, index)=>{
-                        const {name, action, value} = field;
-                        return <input key={index} type="text" placeholder={name} value={value} onChange={action}/>
+                        const {name, action, value, type} = field;
+                        return <input key={index} type={type} placeholder={name} value={value} onChange={action}/>
                     })
                 } 
             </div>

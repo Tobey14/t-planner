@@ -68,7 +68,7 @@ const SignUp = () => {
     
     }, [signUpStatus, navigate]);
 
-    let fields = [{name:'Email', action:handleEmailChange, value:email}, {name:'Password', action:handlePasswordChange, value:password}, {name:'Confirm Password', action:handleNewPasswordChange, value:newPassword}];
+    let fields = [{name:'Email', action:handleEmailChange, value:email, type:'email'}, {name:'Password', action:handlePasswordChange, value:password, type:'password'}, {name:'Confirm Password', action:handleNewPasswordChange, value:newPassword, type:'password'}];
 
 
     return (
